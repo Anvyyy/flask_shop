@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>Регистрация</title>
+{% endblock %}
+
+{% block body %}
+    <form method="post">
+        {% for cat, msg in get_flashed_messages(True) %}
+            <div class="alert {{ cat }}" role="alert">{{ msg }}</div>
+        {% endfor %}
+        <input type="text" class="form_control" name="email" id="email" placeholder="email">
+        <input type="text" class="form_control" name="password" id="password" placeholder="password">
+        <button class="btn btn-success" type="submit">Зарегистрироваться</button>
+    </form>
+{% endblock %}

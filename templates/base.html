@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block title %}{% endblock %}
+</head>
+<body>
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
+  <p class="h5 my-0 me-md-auto fw-normal text-light">MyTestShop </p>
+  <nav class="my-2 my-md-0 me-md-3">
+    <a class="p-2 d-none d-md-inline-block text-white" href="/">Главная</a>
+    <a class="p-2 d-none d-md-inline-block text-white" href="/about">Про магазин</a>
+    <a class="p-2 d-none d-md-inline-block text-white" href="/support">Помощь</a>
+    <a class="p-2 d-none d-md-inline-block text-white" href="/prices">Цены</a>
+  </nav>
+  <a class="btn btn-outline-primary" href="/create">Добавить товар</a>
+  <a class="btn btn-outline-primary" href="/registration">Регистрация</a>
+</header>
+
+{% block body %}{% endblock%}
+  <footer class="footer mt-auto py-3 bg-dark">
+    <div class="row" >
+      <div class="col-12 col-md" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bootstrap-fill" viewBox="0 0 16 16">
+          <path d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z"/>
+          <path d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396H5.062z"/>
+        </svg>
+        <small class="d-block mb-3 text-muted">© 2017-2021</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-secondary">Это я</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="https://github.com/Anvyyy">GitHub</a></li>
+          <li><a class="link-secondary" href="https://t.me/anvyyy">Telegram</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-secondary">Просто почему бы и нет</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="https://www.youtube.com/watch?v=lkQ0LDx9jHs&ab_channel=FANVIDOS-%D0%9C%D0%B8%D0%BB%D1%8B%D0%B5%D0%BA%D0%BE%D1%82%D0%B8%D0%BA%D0%B8">Прикольная штучка</a></li>
+          <li><a class="link-secondary" href="https://www.youtube.com/watch?v=fJ9rUzIMcZQ&ab_channel=QueenOfficial">Ещё одна прикольная штучка</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-secondary">Ресурсы</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Resource</a></li>
+          <li><a class="link-secondary" href="#">Resource name</a></li>
+          <li><a class="link-secondary" href="#">Another resource</a></li>
+          <li><a class="link-secondary" href="#">Final resource</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
