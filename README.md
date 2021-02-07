@@ -10,5 +10,5 @@
 тестовая оплата товара при помощи платёжной системы
 [fondy](https://fondy.ru/).
 
-![markdown_logo](https://www.opencart.ru/image/cache/catalog/FONDY/fondy_color_square-800x800.png)
+![markdown_logo](https://work-info.org/images/logo/otzyvua/8856.png)
 
