@@ -19,3 +19,31 @@ def add_product(title, price):
         return False
     except Exception as err:
         return f'Ошибка добавления товара {err}'
+
+
+def get_user(user_id):
+    try:
+        res = Users.query.get(user_id)
+        if not res:
+            print('Пользователь не найден')
+            return False
+        return res
+    except Exception as err:
+        print(f'Ошибка в получении данных {err}')
+
+    return False
+
+
+def get_email(email):
+    try:
+        res = Users.query.filter_by(email=email).first()
+        print(res.email)
+        if not res:
+            print('Пользователь не найден')
+            return False
+        else:
+            return res
+    except Exception as err:
+        print(f'Ошибка в получении данных {err}')
+        return False
+

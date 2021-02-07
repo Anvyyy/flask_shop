@@ -1,9 +1,11 @@
 from cloudipsp import Api, Checkout
-from flask import render_template, request, redirect, flash, url_for
+from flask import render_template, request, redirect, flash
+from flask_login import login_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from main import app, Item
-from working_db import add_users, add_product
+from main import app, Item, login_manager, Users
+from working_db import add_users, add_product, get_email
+from user_login import UserLogin
 
 
 @app.route('/')
@@ -65,7 +67,7 @@ def registration():
             res = add_users(email=request.form['email'], password=request.form['password'], hash_password=hash_password)
             if not res:
                 flash('Регистрация успешно пройдена', category='alert-success')
-                return redirect('/registration')
+                return redirect('/login')
             else:
                 flash(res, category='alert-danger')
                 redirect('/')
@@ -73,6 +75,21 @@ def registration():
             flash('Неверно заполнены поля', category='alert-danger')
             redirect('/about')
     return render_template('registration.html')
+
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    if request.method == 'POST':
+        user = get_email(request.form['email'])
+        if user:
+            if check_password_hash(user.hash_password, request.form['password']):
+                # log_ser = UserLogin().create(user)
+                # login_user(log_ser)
+                flash('Вы успешно вошли', category='alert-success')
+                return redirect('/')
+            else:
+                flash('Неверная пара логин/пароль', category='alert-danger')
+    return render_template('login.html')
 
 
 if __name__ == '__main__':
