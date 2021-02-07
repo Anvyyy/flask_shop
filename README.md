@@ -8,7 +8,7 @@
 пользователей и хэширование паролей, добавление товара
 на страничку магазина,
 тестовая оплата товара при помощи платёжной системы
-[fondy](https://fondy.ru/)
+[fondy](https://fondy.ru/).
 
 ![markdown_logo](https://www.opencart.ru/image/cache/catalog/FONDY/fondy_color_square-800x800.png)
 
