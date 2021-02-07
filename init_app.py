@@ -1,7 +1,7 @@
 from flask import Flask
 
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
+from flask_login import LoginManager, UserMixin
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'fsghfsdjkhgsd'
@@ -22,8 +22,13 @@ class Item(db.Model):
         return self.title
 
 
-class Users(db.Model):
+class Users(db.Model, UserMixin):
     id = db.Column(db.INTEGER, primary_key=True)
     email = db.Column(db.String, unique=True, nullable=False)
     password = db.Column(db.String, nullable=False)
     hash_password = db.Column(db.String, nullable=False)
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Users.query.get(user_id)
